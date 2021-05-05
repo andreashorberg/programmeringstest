@@ -23,25 +23,22 @@ final class ChuckWorker {
         return url
     }
 
-    func getRandomJoke(completion: ((Result<ChuckJoke, Error>) -> Void)?, subject: CurrentValueSubject<ChuckJoke?, ChuckService.ChuckError>?) {
+    func getRandomJoke(completion: @escaping ((Result<ChuckJoke, Error>) -> Void)) {
         let task = URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
             guard
                 error == nil,
                 let data = data,
                 let self = self
             else {
-                completion?(.failure(ChuckService.ChuckError.failed))
-                subject?.send(completion: .failure(ChuckService.ChuckError.failed))
+                completion(.failure(ChuckService.ChuckError.failed))
                 return
             }
 
             do {
                 let chuckJoke = try self.decodeJSON(data)
-                completion?(.success(chuckJoke))
-                subject?.send(chuckJoke)
+                completion(.success(chuckJoke))
             } catch {
-                completion?(.failure(ChuckService.ChuckError.failed))
-                subject?.send(completion: .failure(ChuckService.ChuckError.failed))
+                completion(.failure(ChuckService.ChuckError.failed))
             }
         }
 

@@ -22,7 +22,7 @@ class ListViewModel {
     }
 
     func didTapLoadButton() {
-        
+
     }
 
     var jokes: [ChuckJoke] = []

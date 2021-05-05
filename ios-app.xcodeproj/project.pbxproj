@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		EE04866C25FB97F900BF37A1 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE04866B25FB97F900BF37A1 /* ListViewModel.swift */; };
 		EE04867825FBAA7000BF37A1 /* ChuckWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE04867725FBAA7000BF37A1 /* ChuckWorker.swift */; };
-		EE04867E25FBADE400BF37A1 /* ChuckPersistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE04867D25FBADE400BF37A1 /* ChuckPersistance.swift */; };
 		EE5A8DBB25FB686F00A7CCA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5A8DBA25FB686F00A7CCA7 /* AppDelegate.swift */; };
 		EE5A8DBD25FB686F00A7CCA7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5A8DBC25FB686F00A7CCA7 /* SceneDelegate.swift */; };
 		EE5A8DBF25FB686F00A7CCA7 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5A8DBE25FB686F00A7CCA7 /* ListViewController.swift */; };
@@ -23,7 +22,6 @@
 		EE04866B25FB97F900BF37A1 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		EE04867625FBA5D000BF37A1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		EE04867725FBAA7000BF37A1 /* ChuckWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuckWorker.swift; sourceTree = "<group>"; };
-		EE04867D25FBADE400BF37A1 /* ChuckPersistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuckPersistance.swift; sourceTree = "<group>"; };
 		EE5A8DB725FB686F00A7CCA7 /* ios-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE5A8DBA25FB686F00A7CCA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE5A8DBC25FB686F00A7CCA7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,14 +53,6 @@
 			path = JokeList;
 			sourceTree = "<group>";
 		};
-		EE04867C25FBADC100BF37A1 /* Persistance */ = {
-			isa = PBXGroup;
-			children = (
-				EE04867D25FBADE400BF37A1 /* ChuckPersistance.swift */,
-			);
-			path = Persistance;
-			sourceTree = "<group>";
-		};
 		EE5A8DAE25FB686F00A7CCA7 = {
 			isa = PBXGroup;
 			children = (
@@ -83,7 +73,6 @@
 		EE5A8DB925FB686F00A7CCA7 /* ios-app */ = {
 			isa = PBXGroup;
 			children = (
-				EE04867C25FBADC100BF37A1 /* Persistance */,
 				EE04866925FB815400BF37A1 /* JokeList */,
 				EE5A8DD225FB6BF100A7CCA7 /* Service */,
 				EE5A8DBA25FB686F00A7CCA7 /* AppDelegate.swift */,
@@ -179,7 +168,6 @@
 				EE5A8DBF25FB686F00A7CCA7 /* ListViewController.swift in Sources */,
 				EE04866C25FB97F900BF37A1 /* ListViewModel.swift in Sources */,
 				EE5A8DBB25FB686F00A7CCA7 /* AppDelegate.swift in Sources */,
-				EE04867E25FBADE400BF37A1 /* ChuckPersistance.swift in Sources */,
 				EE5A8DD425FB6CE500A7CCA7 /* ChuckJoke.swift in Sources */,
 				EE5A8DBD25FB686F00A7CCA7 /* SceneDelegate.swift in Sources */,
 			);

@@ -6,24 +6,19 @@ import Foundation
 import Combine
 
 final class ChuckService {
-    private let persistance: ChuckPersistance
     private let worker = ChuckWorker()
-    let randomJokeSubject = CurrentValueSubject<ChuckJoke?, ChuckError>(nil)
+    private var jokes: Set<ChuckJoke> = []
 
-    init(persistance: ChuckPersistance) {
-        self.persistance = persistance
-    }
-
-    func getRandomJoke(completion: ((Result<ChuckJoke, Error>) -> Void)?) {
-        worker.getRandomJoke(completion: completion, subject: randomJokeSubject)
+    func getRandomJoke(completion: @escaping (Result<ChuckJoke, Error>) -> Void) {
+        worker.getRandomJoke(completion: completion)
     }
 
     func saveJoke(_ joke: ChuckJoke) throws {
-        persistance.save(joke)
+        jokes.insert(joke)
     }
 
     func getAllJokes() -> Set<ChuckJoke> {
-        persistance.allJokes()
+        jokes
     }
 
     enum ChuckError: LocalizedError {
