@@ -7,18 +7,9 @@ import Combine
 
 final class ChuckService {
     private let worker = ChuckWorker()
-    private var jokes: Set<ChuckJoke> = []
 
     func getRandomJoke(completion: @escaping (Result<ChuckJoke, Error>) -> Void) {
         worker.getRandomJoke(completion: completion)
-    }
-
-    func saveJoke(_ joke: ChuckJoke) throws {
-        jokes.insert(joke)
-    }
-
-    func getAllJokes() -> Set<ChuckJoke> {
-        jokes
     }
 
     enum ChuckError: LocalizedError {

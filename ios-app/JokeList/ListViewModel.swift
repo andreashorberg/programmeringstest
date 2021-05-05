@@ -16,9 +16,6 @@ class ListViewModel {
 
     init(chuckService: ChuckService) {
         self.chuckService = chuckService
-        jokes = chuckService
-            .getAllJokes()
-            .sorted { $0.createdAt > $1.createdAt }
     }
 
     func didTapLoadButton() {
@@ -32,7 +29,6 @@ class ListViewModel {
             guard let self = self else { return }
             switch result {
             case .success(let joke):
-                self.jokes.append(joke)
                 self.viewState = .needsUpdate
             case .failure(let error):
                 self.viewState = .error(error)
