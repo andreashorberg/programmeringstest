@@ -24,7 +24,7 @@ final class ChuckWorker {
     }
 
     func getRandomJoke(completion: @escaping ((Result<ChuckJoke, Error>) -> Void)) {
-        let task = URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
+        let _ = URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
             guard
                 error == nil,
                 let data = data,
@@ -41,14 +41,12 @@ final class ChuckWorker {
                 completion(.failure(ChuckService.ChuckError.failed))
             }
         }
-
-        task.resume()
     }
 
     private func decodeJSON(_ data: Data) throws -> ChuckJoke {
         let decoder = JSONDecoder()
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
         decoder.dateDecodingStrategy = .formatted(dateFormatter)
         return try decoder.decode(ChuckJoke.self, from: data)
     }

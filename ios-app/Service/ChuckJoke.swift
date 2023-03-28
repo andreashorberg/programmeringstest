@@ -4,20 +4,22 @@
 
 import Foundation
 
-struct ChuckJoke: Decodable, Hashable {
+struct ChuckJoke: Decodable, Hashable, Identifiable {
+    let id = "ChuckJoke"
     let categories: [String]
     let createdAt: Date
     let updatedAt: Date
     let iconUrl: URL
-    let id: String
+    let identifier: String
     let url: URL
     let value: String
 
     enum CodingKeys: String, CodingKey {
-        case categories, id, url, value
+        case categories, url, value
         case createdAt = "created_at"
         case updatedAt = "updated_at"
         case iconUrl = "icon_url"
+        case identifier = "id"
     }
 
     init(from decoder: Decoder) throws {
@@ -26,7 +28,7 @@ struct ChuckJoke: Decodable, Hashable {
         createdAt = try container.decode(Date.self, forKey: .createdAt)
         updatedAt = try container.decode(Date.self, forKey: .updatedAt)
         iconUrl = try container.decode(URL.self, forKey: .iconUrl)
-        id = try container.decode(String.self, forKey: .id)
+        identifier = try container.decode(String.self, forKey: .identifier)
         url = try container.decode(URL.self, forKey: .url)
         value = try container.decode(String.self, forKey: .value)
     }

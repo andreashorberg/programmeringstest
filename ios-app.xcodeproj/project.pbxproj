@@ -9,11 +9,9 @@
 /* Begin PBXBuildFile section */
 		EE04866C25FB97F900BF37A1 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE04866B25FB97F900BF37A1 /* ListViewModel.swift */; };
 		EE04867825FBAA7000BF37A1 /* ChuckWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE04867725FBAA7000BF37A1 /* ChuckWorker.swift */; };
-		EE5A8DBB25FB686F00A7CCA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5A8DBA25FB686F00A7CCA7 /* AppDelegate.swift */; };
-		EE5A8DBD25FB686F00A7CCA7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5A8DBC25FB686F00A7CCA7 /* SceneDelegate.swift */; };
-		EE5A8DBF25FB686F00A7CCA7 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5A8DBE25FB686F00A7CCA7 /* ListViewController.swift */; };
+		EE1EA7E629D2D4AF0014C07A /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1EA7E529D2D4AF0014C07A /* ListView.swift */; };
+		EE5A8DBB25FB686F00A7CCA7 /* ChuckApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5A8DBA25FB686F00A7CCA7 /* ChuckApp.swift */; };
 		EE5A8DC425FB687100A7CCA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE5A8DC325FB687100A7CCA7 /* Assets.xcassets */; };
-		EE5A8DC725FB687100A7CCA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE5A8DC525FB687100A7CCA7 /* LaunchScreen.storyboard */; };
 		EE5A8DD025FB6BEC00A7CCA7 /* ChuckService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5A8DCF25FB6BEC00A7CCA7 /* ChuckService.swift */; };
 		EE5A8DD425FB6CE500A7CCA7 /* ChuckJoke.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5A8DD325FB6CE500A7CCA7 /* ChuckJoke.swift */; };
 /* End PBXBuildFile section */
@@ -22,13 +20,10 @@
 		EE04866B25FB97F900BF37A1 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		EE04867625FBA5D000BF37A1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		EE04867725FBAA7000BF37A1 /* ChuckWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuckWorker.swift; sourceTree = "<group>"; };
+		EE1EA7E529D2D4AF0014C07A /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		EE5A8DB725FB686F00A7CCA7 /* ios-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		EE5A8DBA25FB686F00A7CCA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EE5A8DBC25FB686F00A7CCA7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EE5A8DBE25FB686F00A7CCA7 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		EE5A8DBA25FB686F00A7CCA7 /* ChuckApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuckApp.swift; sourceTree = "<group>"; };
 		EE5A8DC325FB687100A7CCA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		EE5A8DC625FB687100A7CCA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		EE5A8DC825FB687100A7CCA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE5A8DCF25FB6BEC00A7CCA7 /* ChuckService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuckService.swift; sourceTree = "<group>"; };
 		EE5A8DD325FB6CE500A7CCA7 /* ChuckJoke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuckJoke.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -47,8 +42,8 @@
 		EE04866925FB815400BF37A1 /* JokeList */ = {
 			isa = PBXGroup;
 			children = (
-				EE5A8DBE25FB686F00A7CCA7 /* ListViewController.swift */,
 				EE04866B25FB97F900BF37A1 /* ListViewModel.swift */,
+				EE1EA7E529D2D4AF0014C07A /* ListView.swift */,
 			);
 			path = JokeList;
 			sourceTree = "<group>";
@@ -75,11 +70,8 @@
 			children = (
 				EE04866925FB815400BF37A1 /* JokeList */,
 				EE5A8DD225FB6BF100A7CCA7 /* Service */,
-				EE5A8DBA25FB686F00A7CCA7 /* AppDelegate.swift */,
-				EE5A8DBC25FB686F00A7CCA7 /* SceneDelegate.swift */,
+				EE5A8DBA25FB686F00A7CCA7 /* ChuckApp.swift */,
 				EE5A8DC325FB687100A7CCA7 /* Assets.xcassets */,
-				EE5A8DC525FB687100A7CCA7 /* LaunchScreen.storyboard */,
-				EE5A8DC825FB687100A7CCA7 /* Info.plist */,
 			);
 			path = "ios-app";
 			sourceTree = "<group>";
@@ -151,7 +143,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE5A8DC725FB687100A7CCA7 /* LaunchScreen.storyboard in Resources */,
 				EE5A8DC425FB687100A7CCA7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -163,28 +154,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE1EA7E629D2D4AF0014C07A /* ListView.swift in Sources */,
 				EE04867825FBAA7000BF37A1 /* ChuckWorker.swift in Sources */,
 				EE5A8DD025FB6BEC00A7CCA7 /* ChuckService.swift in Sources */,
-				EE5A8DBF25FB686F00A7CCA7 /* ListViewController.swift in Sources */,
 				EE04866C25FB97F900BF37A1 /* ListViewModel.swift in Sources */,
-				EE5A8DBB25FB686F00A7CCA7 /* AppDelegate.swift in Sources */,
+				EE5A8DBB25FB686F00A7CCA7 /* ChuckApp.swift in Sources */,
 				EE5A8DD425FB6CE500A7CCA7 /* ChuckJoke.swift in Sources */,
-				EE5A8DBD25FB686F00A7CCA7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		EE5A8DC525FB687100A7CCA7 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EE5A8DC625FB687100A7CCA7 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		EE5A8DC925FB687100A7CCA7 /* Debug */ = {
@@ -238,7 +217,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -293,7 +272,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -308,15 +287,27 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 3PJL6N7ZC7;
-				INFOPLIST_FILE = "ios-app/Info.plist";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "se.imaginareal.ios-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -327,15 +318,27 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 3PJL6N7ZC7;
-				INFOPLIST_FILE = "ios-app/Info.plist";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "se.imaginareal.ios-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

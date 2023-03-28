@@ -4,32 +4,26 @@
 
 import Foundation
 
-class ListViewModel {
+class ListViewModel: ObservableObject {
     private let chuckService: ChuckService
-    var stateUpdated: ((ViewState) -> Void)?
-    private var viewState: ViewState = .idle {
-        didSet {
-            stateUpdated?(viewState)
-        }
-    }
-
+    var viewState: ViewState = .idle
+    var jokes: [ChuckJoke]
 
     init(chuckService: ChuckService) {
         self.chuckService = chuckService
+        jokes = []
     }
 
     func didTapLoadButton() {
 
     }
 
-    var jokes: [ChuckJoke] = []
-
     private func loadJoke() {
         chuckService.getRandomJoke { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let joke):
-                self.viewState = .needsUpdate
+                self.viewState = .loaded
             case .failure(let error):
                 self.viewState = .error(error)
             }
@@ -38,7 +32,7 @@ class ListViewModel {
 
     enum ViewState {
         case idle
-        case needsUpdate
+        case loaded
         case error(Error)
     }
 }
