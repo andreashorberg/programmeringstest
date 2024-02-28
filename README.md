@@ -12,6 +12,8 @@
 
 ### - Skämten i listan ska visa en text med de första 30 tecknen av skämtet följt av "..." samt datum då skämtet skapades i backend, listan ska sorteras enligt äldsta skämten överst. Datumet ska visas i UTC med svensk locale.
 
+### - Texter i appen ska kunna skalas till 200% och element ska ha rätt accessibility traits.
+
 Marginalen ska vara 16px till leading, trailing och 8px till top och bottom
 
     +------------------------------------+
@@ -39,7 +41,7 @@ Marginalen ska vara 16px till leading, trailing och 8px till top och bottom
 
 ### - När man trycker på ett skämt i listan ska man komma till en detaljvy som visar upp all metadata om ett skämt, detaljvyn ska följa MVVM-mönster.
 
-Detaljvyn ska visa id som titel och därefter lista parametrar enligt följande, ikonen ska laddas ned och visas som en bild i lämplig storlek 
+Detaljvyn ska visa id som titel och därefter lista parametrar enligt följande, ikonen ska laddas ned asynkront och visas som en bild i lämplig storlek, orginalURL:en till ikonen är fel och behöver rättas till https://api.chucknorris.io/img/avatar/chuck-norris.png
 [icon] created_at
 updated_at 
 link
