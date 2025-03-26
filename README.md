@@ -41,7 +41,8 @@ Marginalen ska vara 16px till leading, trailing och 8px till top och bottom
 
 ### - När man trycker på ett skämt i listan ska man komma till en detaljvy som visar upp all metadata om ett skämt, detaljvyn ska följa MVVM-mönster.
 
-Detaljvyn ska visa id som titel och därefter lista parametrar enligt följande, ikonen ska laddas ned asynkront och visas som en bild i lämplig storlek, orginalURL:en till ikonen är fel och behöver rättas till https://api.chucknorris.io/img/avatar/chuck-norris.png
+Detaljvyn ska visa id som titel och därefter lista parametrar enligt följande, ikonen ska laddas ned asynkront och visas som en bild i lämplig storlek.
+
 [icon] created_at
 updated_at 
 link
