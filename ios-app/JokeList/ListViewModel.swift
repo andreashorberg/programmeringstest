@@ -1,10 +1,6 @@
-//
-//  Copyright © 2021 SL. All rights reserved.
-//
-
 import Foundation
 
-class ListViewModel: ObservableObject {
+@Observable class ListViewModel {
     private let chuckService: ChuckService
     var viewState: ViewState = .idle
     var jokes: [ChuckJoke]
@@ -14,19 +10,16 @@ class ListViewModel: ObservableObject {
         jokes = []
     }
 
-    func didTapLoadButton() {
+    func didTapLoadButton() async {
 
     }
 
-    private func loadJoke() {
-        chuckService.getRandomJoke { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case .success(let joke):
-                self.viewState = .loaded
-            case .failure(let error):
-                self.viewState = .error(error)
-            }
+    private func loadJoke() async {
+        do {
+            let _ = try await chuckService.getRandomJoke()
+            viewState = .loaded
+        } catch {
+            viewState = .error(error)
         }
     }
 

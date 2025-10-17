@@ -1,7 +1,3 @@
-//
-//  Copyright © 2021 SL. All rights reserved.
-//
-
 import SwiftUI
 
 @main

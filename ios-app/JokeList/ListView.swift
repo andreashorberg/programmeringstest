@@ -1,27 +1,23 @@
-//
-//  ListView.swift
-//  ios-app
-//
-//  Created by Andreas Hörberg on 2023-03-28.
-//
-
 import SwiftUI
 
 struct ListView: View {
-    @ObservedObject var viewModel: ListViewModel = ListViewModel(chuckService: ChuckService())
+    let viewModel: ListViewModel
 
     var body: some View {
-        switch viewModel.viewState {
-        case .idle:
-            Text("No jokes here yet")
-        case .loaded:
-            List {
+        List {
+            switch viewModel.viewState {
+            case .idle:
+                Text("No jokes here yet")
+            case .loaded, .error:
+                if case .error = viewModel.viewState {
+                    Section {
+                        Text("Error :(")
+                    }
+                }
                 ForEach(viewModel.jokes) { joke in
-                    
+
                 }
             }
-        case .error:
-            Text("Error :(")
         }
     }
 
@@ -33,7 +29,7 @@ struct ListView: View {
         }
     }
 
-    func didTapLoadButton() {
-        viewModel.didTapLoadButton()
+    func didTapLoadButton() async {
+        await viewModel.didTapLoadButton()
     }
 }

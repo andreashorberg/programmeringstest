@@ -1,11 +1,7 @@
-//
-//  Copyright © 2021 SL. All rights reserved.
-//
-
 import Foundation
 
-struct ChuckJoke: Decodable, Hashable, Identifiable {
-    let id = "ChuckJoke"
+struct ChuckJoke: Hashable, Identifiable, Joke {
+    let id: String = "ChuckJoke"
     let categories: [String]
     let createdAt: Date
     let updatedAt: Date

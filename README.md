@@ -6,7 +6,7 @@
 
 ### - Skämten laddas in ett i taget genom att slumpas fram med en knapptryckning
 
-### - Om ett skämt slumpas fram som redan finns i listan ska ett felmeddelande visas och skämtet sparas inte
+### - Om ett skämt slumpas fram som redan finns i listan ska ett felmeddelande visas med **röd text** och skämtet sparas inte
 
 ### - Vyer skapas i SwiftUI
 
@@ -14,14 +14,14 @@
 
 ### - Texter i appen ska kunna skalas till 200% och element ska ha rätt accessibility traits.
 
-Marginalen ska vara 16px till leading, trailing och 8px till top och bottom
+Marginalerna ska vara 16px till leading, trailing och 8px till top och bottom
 
     +------------------------------------+
     |    This is an example of  ...      |
     |    2021-05-05                      |
     +------------------------------------+
 
-### - Listan ska visas i en NavigationView med titel "Chuck Norris Jokes" och en knapp uppe till höger för att slumpa fram skämt
+### - Listan ska visas i en vy med titel (navigation bar) "Chuck Norris Jokes" och en knapp uppe till höger för att slumpa fram skämt
 
     +------------------------------------+
     |    Chuck Norris Jokes     | Joke! ||
@@ -39,12 +39,18 @@ Marginalen ska vara 16px till leading, trailing och 8px till top och bottom
     |    2021-05-05                      |
     +------------------------------------+
 
-### - När man trycker på ett skämt i listan ska man komma till en detaljvy som visar upp all metadata om ett skämt, detaljvyn ska följa MVVM-mönster.
+### - När man trycker på ett skämt i listan ska man komma till en detaljvy (push) som visar upp all metadata om ett skämt.
 
-Detaljvyn ska visa id som titel och därefter lista parametrar enligt följande, ikonen ska laddas ned asynkront och visas som en bild i lämplig storlek.
+Detaljvyn ska visa id som titel och därefter lista parametrar enligt följande, ikonen ska laddas ned asynkront och visas som en bild.
 
 [icon] created_at
 updated_at 
 link
 categories1, categories2, etc
 value
+
+## Övriga krav
+### Projektet ska inte innehålla några varningar
+### Interfacet för ChuckService ska se till att man bara kan kasta fel av typen ChuckError 
+### ChuckWorker ska skapas varje gång man gör ett nytt nätverksanrop och därefter deallokeras.
+### Bonus: Idag finns det en NetworkCache för att lagra data, den kan bara hantera ChuckJoke. Gör den generisk för att kunna hantera även andra skämt än ChuckJoke.

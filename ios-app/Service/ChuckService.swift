@@ -1,22 +1,19 @@
-//
-//  Copyright © 2021 SL. All rights reserved.
-//
-
 import Foundation
 import Combine
 
-final class ChuckService {
-    private let worker = ChuckWorker()
+final class ChuckService: Sendable {
+    private let worker: ChuckWorker
+    private var workerFactory: (() -> ChuckWorker)?
 
-    func getRandomJoke(completion: @escaping (Result<ChuckJoke, Error>) -> Void) {
-        worker.getRandomJoke(completion: completion)
+    init() {
+        self.worker = .init()
+
+        self.workerFactory = {
+            self.worker
+        }
     }
 
-    enum ChuckError: LocalizedError {
-        case failed
-
-        var errorDescription: String? {
-            return "“It works on my machine” always holds true for Chuck Norris."
-        }
+    func getRandomJoke() async throws -> any Joke {
+        return try await worker.getRandomJoke()
     }
 }
